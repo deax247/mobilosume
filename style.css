@@ -80,6 +80,15 @@ a{color:inherit; text-decoration:none}
 }
 .chip:hover{transform: translateY(-1px); color: var(--text); border-color: rgba(255,255,255,.22);}
 
+/* header icons (telegram / whatsapp / call) */
+.topIcons{display:flex; gap:10px; align-items:center; margin-left:12px}
+.topIcon{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:10px; color:var(--muted); background: rgba(255,255,255,.02); border:1px solid transparent; transition:.18s ease}
+.topIcon svg{width:18px;height:18px}
+.topIcon:hover{transform: translateY(-2px); color:var(--text); background: rgba(255,255,255,.04);}
+.topIcon.telegram{border-color: rgba(32,161,243,.12)}
+.topIcon.whatsapp{border-color: rgba(37,211,102,.12)}
+.topIcon.call{border-color: rgba(255,205,0,.10)}
+
 /* Hero */
 .hero{
   margin-top:26px;
@@ -323,6 +332,21 @@ section{margin-top:20px}
   transition:.2s ease;
 }
 .linkBtn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.08);}
+
+/* redesigned contact grid */
+.contactGrid{display:grid; grid-template-columns: 1fr 320px; gap:16px; align-items:start}
+@media (max-width:900px){ .contactGrid{grid-template-columns:1fr;}}
+.contactInfo .muted{color:var(--muted)}
+
+.contactActions{display:flex; flex-direction:column; gap:10px}
+.contactActions .linkBtn{justify-content:flex-start; padding:12px 14px; border-radius:12px;}
+.contactActions .icon{font-size:18px; display:inline-flex; width:22px}
+.contactActions .label{font-weight:700}
+.contactActions .hint{display:block; font-size:12px; color:var(--muted); margin-left:32px}
+
+.linkBtn.telegram{border-color: rgba(32,161,243,.18); background: linear-gradient(135deg, rgba(32,161,243,.06), rgba(32,161,243,.02));}
+.linkBtn.whatsapp{border-color: rgba(37,211,102,.18); background: linear-gradient(135deg, rgba(37,211,102,.06), rgba(37,211,102,.02));}
+.linkBtn.call{border-color: rgba(255,205,0,.12); background: linear-gradient(135deg, rgba(255,205,0,.04), rgba(255,205,0,.02));}
 
 footer{
   margin-top:26px;

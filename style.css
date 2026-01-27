@@ -68,7 +68,19 @@ a{color:inherit; text-decoration:none}
 }
 .brand b{letter-spacing:.3px}
 .nav{
-  display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+  display:flex; gap:10px; flex-wrap:nowrap; justify-content:flex-end;
+}
+/* Hide "Контакты" button at 535px and below */
+@media (max-width: 535px){
+  .nav-link-contact{
+    display:none;
+  }
+}
+/* Hide all navigation buttons at 440px and below */
+@media (max-width: 440px){
+  .nav-link{
+    display:none;
+  }
 }
 .chip{
   padding:10px 12px; border-radius:999px;
@@ -248,45 +260,6 @@ section{margin-top:20px}
   border-bottom: 1px solid var(--line);
 }
 
-/* немного выделяем главный шоурил, но не слишком */
-.work.showreel{
-  border-color: rgba(108,99,255,.22);
-  box-shadow: 0 10px 40px rgba(108,99,255,.06);
-}
-.work.showreel .caption{
-  color: rgba(255,255,255,.95);
-  font-weight:700;
-}
-
-/* карточка для главного шоурила — отдельный блок перед сеткой */
-.showreel-card{
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.06);
-  background: linear-gradient(180deg, rgba(15,16,20,.98), rgba(15,16,20,.96));
-  box-shadow: 0 18px 60px rgba(0,0,0,0.6);
-}
-.showreel-card .caption{
-  padding:14px 16px 8px;
-  font-weight:700;
-  color: rgba(255,255,255,.95);
-  font-size:15px;
-  border-bottom: 1px solid var(--line);
-}
-.showreel-card .frame{ /* вертикальный формат 9:16 для шоурила */
-  position: relative;
-  aspect-ratio: 9 / 16;
-  width: 100%;
-  max-height: 80vh; /* не даст блоку быть слишком высоким на больших экранах */
-  overflow: hidden;
-  background: linear-gradient(135deg, rgba(108,99,255,.12), rgba(0,255,209,.06));
-}
-.showreel-card .frame iframe{
-  position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-}
-.showreel-card .info{padding:12px 16px; display:flex; justify-content:space-between; align-items:center;}
 .work .frame{
   position:relative;
   width:100%;
